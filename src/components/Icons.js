@@ -10,7 +10,7 @@ import LogoHtml5 from "react-ionicons/lib/LogoHtml5";
 import LogoCss3 from "react-ionicons/lib/LogoCss3";
 import LogoJavascript from "react-ionicons/lib/LogoJavascript";
 import LogoSass from "react-ionicons/lib/LogoSass";
-import { DiReact } from "react-icons/di";
+
 
 function MailIcon(props) {
   return (
@@ -120,15 +120,7 @@ function SassIcon() {
   );
 }
 
-function ReactIcon() {
-  return (
-    <DiReact
-      className="S3-icon-dev S3-icon-dev-React"
-      fontSize="60px"
-      color="white"
-    />
-  );
-}
+
 
 export {
   PhoneIcon,
@@ -140,5 +132,5 @@ export {
   CssIcon,
   JSIcon,
   SassIcon,
-  ReactIcon
+
 };
