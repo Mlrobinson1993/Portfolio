@@ -54,7 +54,7 @@ export class Form extends Component {
       message: this.state.message
     };
 
-    Axios.post("API_URI", data)
+    Axios.post("nodejs-express-5v5zcv5n5.now.sh", data)
       .then(res => {
         this.setState(
           {
