@@ -1,0 +1,63 @@
+@import "./variables.scss";
+
+.Navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-row: 1;
+  grid-column: 1 / 4;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  margin: 0;
+  background: transparent;
+  width: 100vw;
+  height: 4rem;
+
+  &-list {
+    position: relative;
+    list-style: none;
+    margin: 0 3rem 0 3rem;
+    font-size: 1.3rem;
+    transition: 0.3s ease-out;
+
+    &:last-child {
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 0.6rem 1rem;
+      transition: 0.3s ease-out;
+
+      &:hover {
+        background-color: white;
+        border: 1px solid $color-green-main;
+      }
+
+      &:hover .Navbar-link {
+        color: $color-green-main;
+      }
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease-out;
+    font-family: "Roboto", sans-serif;
+
+    &:after {
+      content: "";
+      width: 0px;
+      height: 2px;
+      display: block;
+      background: white;
+      transition: 0.3s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

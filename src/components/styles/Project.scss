@@ -1,0 +1,23 @@
+.Project-container {
+  margin: 5rem auto;
+  height: 70vh;
+  max-width: 80vw;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 1rem 0.75rem 1rem 1rem;
+  display: flex;
+}
+
+.Project-image_container {
+  width: 49%;
+  height: 49%;
+  margin: 0.5%;
+  background-color: white;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.4);
+}
+
+.Project-image {
+  &_svg {
+    object-fit: fill;
+  }
+}

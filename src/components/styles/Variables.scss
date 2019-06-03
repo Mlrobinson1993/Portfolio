@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+
+$color-green-main: #92d4b1;
+$color-blue-secondary: #3f3d56;
+$color-black: #0c090d;
+$color-grey-dark: #373638;
+
+.top-40 {
+  top: 40%;
+}
+
+.top-20 {
+  top: 20%;
+}
+
+@mixin centerItems {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

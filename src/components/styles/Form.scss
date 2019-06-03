@@ -1,0 +1,118 @@
+@import "./Typography.scss";
+
+.Form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-container {
+    width: 60vw;
+    height: 60vh;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 5rem;
+    border-radius: 3px;
+    background-color: white;
+  }
+}
+.personal-info-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: 1fr, 5fr;
+}
+
+.contact-form {
+  grid-column: 2;
+  height: 100%;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // padding: 1rem 3rem 3rem 3rem;
+}
+
+input {
+  background-position: -300px 0;
+  background-size: 300px 100%;
+  display: block;
+  width: 60%;
+  padding: 5px 0;
+  margin-top: 1.5rem;
+  border: none;
+  border-bottom: solid 1px $color-green-main;
+  font-size: 15px;
+  transition: all 0.3s;
+  caret-color: $color-green-main;
+  color: #3f3d56;
+
+  &:-ms-input-placeholder {
+    color: #3f3d56;
+  }
+
+  &:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f9f9f9 inset;
+  }
+
+  &:focus {
+    border-bottom: 3px solid $color-green-main;
+    border-radius: 3px;
+    outline: none;
+  }
+  &:invalid {
+    border-bottom: 3px solid red;
+    border-radius: 3px;
+    outline: none;
+  }
+}
+
+textarea {
+  width: 60%;
+  min-height: 10rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.3rem;
+  border: none;
+  border-bottom: 1px solid $color-green-main;
+  outline: none;
+  transition: all 0.3s;
+  font-size: 15px;
+  resize: none;
+
+  &:focus {
+    border-bottom: 3px solid $color-green-main;
+    border-radius: 3px;
+    outline: none;
+  }
+}
+
+button {
+  display: block;
+  background: $color-green-main;
+  width: 50%;
+  height: 30px;
+  margin: 15px auto;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+}

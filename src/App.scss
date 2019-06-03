@@ -1,0 +1,62 @@
+@import "./components/styles/Variables.scss";
+@import "./components/styles/Typography.scss";
+// @import "./components/styles/Icons.scss";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.section {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 3rem;
+
+  &-1 {
+    height: 95vh;
+    background-color: $color-green-main;
+    clip-path: polygon(0 0, 100% 0, 100% 79%, 0% 100%);
+  }
+
+  &-2 {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 0.5fr 2.5fr 2fr 2.5fr 0.5fr;
+    background-color: white;
+  }
+
+  &-3 {
+    height: 130vh;
+    background-color: white;
+    border-top: 9px solid $color-green-main;
+    clip-path: polygon(0 1%, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  &-4 {
+    position: relative;
+    top: -5rem;
+    padding: 15rem;
+    height: 120vh;
+    background-color: $color-green-main;
+    clip-path: polygon(0 21%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.SVG {
+  &-1 {
+    height: 40rem;
+    width: 40rem;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    z-index: 999;
+  }
+}

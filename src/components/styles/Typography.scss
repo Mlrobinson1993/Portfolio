@@ -1,0 +1,29 @@
+@import "./Variables.scss";
+.Heading {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  letter-spacing: 0.3rem;
+  font-size: 4rem;
+  font-weight: 300;
+
+  &-title-primary {
+    top: 20%;
+  }
+
+  &-title-secondary {
+    top: 40%;
+    color: #646265;
+    font-size: 3rem;
+  }
+}
+
+.skill-list_heading {
+  position: relative;
+  left: 45%;
+  grid-row: 1;
+  grid-column: 1 / 3;
+  margin-bottom: 3rem;
+  text-decoration: underline;
+}
