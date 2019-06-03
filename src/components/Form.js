@@ -64,7 +64,9 @@ export class Form extends Component {
         );
       })
       .catch(() => {
-        console.log("Message not sent");
+        this.setState({
+          buttonText: "Message not sent"
+        });
       });
   }
   render() {
