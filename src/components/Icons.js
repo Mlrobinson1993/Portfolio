@@ -11,7 +11,6 @@ import LogoCss3 from "react-ionicons/lib/LogoCss3";
 import LogoJavascript from "react-ionicons/lib/LogoJavascript";
 import LogoSass from "react-ionicons/lib/LogoSass";
 
-
 function MailIcon(props) {
   return (
     <MdMail
@@ -120,8 +119,6 @@ function SassIcon() {
   );
 }
 
-
-
 export {
   PhoneIcon,
   MailIcon,
@@ -131,6 +128,5 @@ export {
   HtmlIcon,
   CssIcon,
   JSIcon,
-  SassIcon,
-
+  SassIcon
 };

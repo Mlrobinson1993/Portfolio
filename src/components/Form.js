@@ -9,9 +9,12 @@ import {
   MailIcon,
   PhoneIcon
 } from "./Icons";
-import Axios from "axios";
 
-// import axios from "axios";
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 
 export class Form extends Component {
   constructor(props) {
@@ -24,7 +27,7 @@ export class Form extends Component {
       buttonText: "Get in touch!"
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlSubmit = this.handleSubmit.bind(this);
   }
 
   resetForm = () => {
@@ -36,40 +39,27 @@ export class Form extends Component {
     });
   };
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
     e.preventDefault();
-    this.setState({
-      buttonText: "sending..."
-    });
+    this.resetForm();
+  };
 
-    let data = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-    };
-
-    Axios.post("nodejs-express-5v5zcv5n5.now.sh", data)
-      .then(res => {
-        this.setState(
-          {
-            sent: true
-          },
-          this.resetForm()
-        );
-      })
-      .catch(() => {
-        this.setState({
-          buttonText: "Message not sent"
-        });
-      });
-  }
   render() {
+    const { name, email, message } = this.state;
     return (
       <div className="Form">
         <div className="Form-container">
@@ -86,24 +76,39 @@ export class Form extends Component {
             <MailIcon row="4" col="1" />
             <PhoneIcon row="3" col="1" />
           </div>
-          <form className="contact-form" onSubmit={this.handleSubmit}>
+          <form
+            name="contact"
+            value="contact"
+            method="POST"
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+            className="contact-form"
+            onSubmit={this.handleSubmit}
+          >
             <input
               type="text"
               name="name"
               onChange={this.handleChange}
               placeholder="Name"
+              value={name}
             />
             <input
               type="email"
               name="email"
               onChange={this.handleChange}
               placeholder="Email"
+              value={email}
             />
             <textarea
               onChange={this.handleChange}
               name="message"
               placeholder="Message"
+              value={message}
             />
+            <label style={{ display: "none" }}>
+              Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+
             <button type="submit"> {this.state.buttonText} </button>
           </form>
         </div>
